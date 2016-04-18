@@ -1,3 +1,0 @@
-#include<stdio.h>
-int main()
-{int t;scanf("%d",&t);while(t--){int m,n,k;scanf("%d%d%d\n",&m,&n,&k);char a[m+1][n+1];int i,j;for(i=1;i<=m;i++){for(j=1;j<=n;j++)scanf("%c",&a[i][j]);scanf("\n");}int p=1,q=k,count=0,y=1,prev=0;while((p>=1&&p<=m)&&(q>=1&&q<=n)){if(a[p][q]=='N'){a[p][q]=y++;prev=a[p][q];p--;count++;}else if(a[p][q]=='E'){a[p][q]=y++;prev=a[p][q];q++;count++;}else if(a[p][q]=='W'){a[p][q]=y++;prev=a[p][q];q--;count++;}else if(a[p][q]=='S'){a[p][q]=y++;prev=a[p][q];p++;count++;}else{break;}}if((p>=1&&p<=m) && (q>=1&&q<=n))printf("%dL\n",prev-a[p][q]+1);else printf("%dE\n",count);}return 0;}
